@@ -11,7 +11,7 @@ using namespace std;
 TEST_CASE("To check if temperature values are generated correctly") 
 {
     vector<int> tempData = generateTemperatureValues(MAX_TEMPERATURE_VALUE , MIN_TEMPERATURE_VALUE , TOTAL_READINGS);
-    int tSize = temperatureData.size();
+    int tSize = tempData.size();
     REQUIRE(tSize == TOTAL_READINGS);
 }
 
