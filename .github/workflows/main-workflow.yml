@@ -15,7 +15,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcovr
     - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender SendSensorData.cpp Test_Sender.cpp
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender *.cpp
       
     - name: run
       run: ./testsender
