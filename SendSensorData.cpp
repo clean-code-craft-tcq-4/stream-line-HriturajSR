@@ -9,7 +9,7 @@ bool transferData()
     {
         for(int count = 0; count < TOTAL_READINGS; count ++)
         {
-            cout << tempData[count]<< "," << chargeData[count] <<endl;
+            std::cout << tempData[count]<< "," << chargeData[count] << std::endl;
         }
         sendStatus = true;
     }
