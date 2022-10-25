@@ -1,5 +1,4 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
 #include <vector>
 #include <iostream>
 #include "TEMPERATURE.hpp"
