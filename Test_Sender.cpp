@@ -7,7 +7,7 @@
 #include "SendSensorData.hpp"
 
 using namespace std;
-int SendSendersize(int total_reading)
+Void testSender(int total_reading)
 { 
     vector<int> tempData = generateTemperatureValues(MAX_TEMPERATURE_VALUE, MIN_TEMPERATURE_VALUE, total_reading);
     vector<int> chargeData = generateChargeValues(MAX_CHARGE_VALUE, MIN_CHARGE_VALUE, total_reading);
@@ -27,12 +27,12 @@ int SendSendersize(int total_reading)
 TEST_CASE("To check if Negetive scenario is working properly")
 
 {
-   SendSendersize(0);
+   testSender(0);
 }
 
 TEST_CASE("To check if temperature and charge values are generated correctlyY")
 
 {
-    SendSendersize(TOTAL_READINGS);
+    testSender(TOTAL_READINGS);
 
 }
