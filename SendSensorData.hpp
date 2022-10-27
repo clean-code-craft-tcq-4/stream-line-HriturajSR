@@ -9,7 +9,7 @@
 #define TOTAL_READINGS 50
 using namespace std;
 
-bool transferData();
+bool transferData(std::vector<int>tempData,std::vector<int>chargeData);
 
 
 #endif
