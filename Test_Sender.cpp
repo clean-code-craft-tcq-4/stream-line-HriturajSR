@@ -7,7 +7,7 @@
 #include "SendSensorData.hpp"
 
 using namespace std;
-int SendSendersize(int total_reading);
+int SendSendersize(int total_reading)
 { 
     vector<int> tempData = generateTemperatureValues(MAX_TEMPERATURE_VALUE, MIN_TEMPERATURE_VALUE, total_reading);
     vector<int> chargeData = generateChargeValues(MAX_CHARGE_VALUE, MIN_CHARGE_VALUE, total_reading);
