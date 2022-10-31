@@ -34,7 +34,7 @@ displayReadData(void)
 float
 calculateMaxValue(float currentValue, float maxValue)
 {
-    if (currentValue != 0 && currentValue <= maxValue)
+    if (maxValue != 0 && currentValue <= maxValue)
     {
         return maxValue;
     }
@@ -45,7 +45,7 @@ calculateMaxValue(float currentValue, float maxValue)
 float
 calculateMinValue(float currentValue, float minValue)
 {
-    if (currentValue != 0 && currentValue >= minValue)
+    if (minValue != 0 && currentValue >= minValue)
     {
         return minValue;
     }
