@@ -20,3 +20,6 @@ calculateMaxValue(float currentValue, float maxValue);
 
 float
 calculateMinValue(float currentValue, float minValue);
+
+float
+calculateSMA(float *currentValue);

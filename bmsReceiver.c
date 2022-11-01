@@ -14,7 +14,7 @@ int ReadParameters(void)
         processedParameters.minTemp = calculateMinValue (bmsParameters.temperature[index], processedParameters.minTemp);
         
         processedParameters.maxChargeRate = calculateMaxValue (bmsParameters.chargeRate[index], processedParameters.maxChargeRate);
-        processedParameters.minChargeRate = calculateMinValue (bmsParameters.chargeRate[i], processedParameters.minChargeRate);
+        processedParameters.minChargeRate = calculateMinValue (bmsParameters.chargeRate[index], processedParameters.minChargeRate);
 
         if (index >= SMA_CONSTANT)
         {
@@ -24,7 +24,7 @@ int ReadParameters(void)
     }
 }
 
-int 
+void 
 displayReadData(void)
 {
     for (int i = 0; i< 50; i++)
@@ -36,7 +36,7 @@ displayReadData(void)
         processedParameters.maxTemp, processedParameters.minTemp,
         processedParameters.maxChargeRate, processedParameters.minChargeRate);
 
-    for (int j = 0; i< 45; j++)
+    for (int j = 0; j < 45; j++)
     {
         printf("SMATemp-%f,SMACR-%f\n", processedParameters.smaTemp[j], processedParameters.smaChargeRate[j]);
     }
@@ -54,7 +54,7 @@ calculateMaxValue(float currentValue, float maxValue)
 }
 
 float
-calculateSMA(float *currentValue,)
+calculateSMA(float *currentValue)
 {
     float sum = 0;
 
