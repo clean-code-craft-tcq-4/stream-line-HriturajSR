@@ -20,6 +20,8 @@ int ReadParameters(void)
         {
             processedParameters.smaTemp[index - (SMA_CONSTANT-1)] = calculateSMA (&bmsParameters.temperature[index]);
             processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)] = calculateSMA (&bmsParameters.chargeRate[index]);
+            printf("%d SMATemp-(%f),SMACR-(%f)\n",index - (SMA_CONSTANT-1), processedParameters.smaTemp[index - (SMA_CONSTANT-1)], processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)]);
+
         }
     }
 }
@@ -84,5 +86,5 @@ calculateMinValue(float currentValue, float minValue)
 int main()
 {
     ReadParameters();
-    displayReadData();
+    //displayReadData();
 }
