@@ -61,7 +61,9 @@ calculateSMA(float *currentValue)
     for (int index=0; index<SMA_CONSTANT; index++)
     {
         sum += currentValue[-index];
+        printf("--%f--",currentValue[-index]);
     }
+    printf("\n");
     sum = sum/5;
     return sum;
 }
