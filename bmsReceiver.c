@@ -18,8 +18,8 @@ int ReadParameters(void)
 
         if (index >= (SMA_CONSTANT - 1))
         {
-            processedParameters.smaTemp[index - SMA_CONSTANT] = calculateSMA (&bmsParameters.temperature[index]);
-            processedParameters.smaChargeRate[index - SMA_CONSTANT] = calculateSMA (&bmsParameters.chargeRate[index]);
+            processedParameters.smaTemp[index - (SMA_CONSTANT-1)] = calculateSMA (&bmsParameters.temperature[index]);
+            processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)] = calculateSMA (&bmsParameters.chargeRate[index]);
         }
     }
 }
