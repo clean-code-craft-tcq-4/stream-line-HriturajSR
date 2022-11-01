@@ -16,7 +16,7 @@ int ReadParameters(void)
         processedParameters.maxChargeRate = calculateMaxValue (bmsParameters.chargeRate[index], processedParameters.maxChargeRate);
         processedParameters.minChargeRate = calculateMinValue (bmsParameters.chargeRate[index], processedParameters.minChargeRate);
 
-        if (index >= SMA_CONSTANT)
+        if (index >= (SMA_CONSTANT - 1))
         {
             processedParameters.smaTemp[index - SMA_CONSTANT] = calculateSMA (&bmsParameters.temperature[index]);
             processedParameters.smaChargeRate[index - SMA_CONSTANT] = calculateSMA (&bmsParameters.chargeRate[index]);
