@@ -1,3 +1,5 @@
+#define SMA_CONSTANT 5
+#define TOTAL_READINGS 50
 struct BMSProcessedParameters{
     float minTemp;
     float maxTemp;
@@ -5,8 +7,8 @@ struct BMSProcessedParameters{
     float minChargeRate;
     float maxChargeRate;
 
-    float smaChargeRate;
-    float smaTemp;
+    float smaChargeRate[45];
+    float smaTemp[45];
 };
 struct BMSParameters{
     float temperature[50];
