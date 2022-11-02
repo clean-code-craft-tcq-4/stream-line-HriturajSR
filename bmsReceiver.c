@@ -86,5 +86,5 @@ calculateMinValue(float currentValue, float minValue)
 int main()
 {
     ReadParameters();
-    //displayReadData();
+    displayReadData();
 }
