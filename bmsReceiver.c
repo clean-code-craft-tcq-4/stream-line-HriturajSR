@@ -29,10 +29,10 @@ int ReadParameters(void)
 void 
 displayReadData(void)
 {
-    for (int i = 0; i< 50; i++)
-    { 
-        printf("Temp-%f,CR-%f\n", bmsParameters.temperature[i], bmsParameters.chargeRate[i]);
-    }
+    //for (int i = 0; i< 50; i++)
+    //{ 
+    //    printf("Temp-%f,CR-%f\n", bmsParameters.temperature[i], bmsParameters.chargeRate[i]);
+    //}
 
     printf ("\nMaxTemp = %f\t MinTemp= %f\t MaxCR = %f\t MinCR =%f\n\n",
         processedParameters.maxTemp, processedParameters.minTemp,
@@ -63,11 +63,9 @@ calculateSMA(float *currentValue)
     for (int index=0; index<SMA_CONSTANT; index++)
     {
         sum += currentValue[-index];
-        printf("(%f)**",currentValue[-index]);
     }
-    printf("##%f**",sum);
+    
     sum = sum/5;
-    printf("%f\n",sum);
     
     return sum;
 }
