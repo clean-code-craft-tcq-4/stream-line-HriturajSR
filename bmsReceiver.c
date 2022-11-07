@@ -98,9 +98,9 @@ calculateSMAforTemp(int index)
 {
     float sum = 0;
 
-    for (int i=5; i > 0; i--)
+    for (int i=4; i >= 0; i--)
     {
-        sum += bmsParameters[index - 5].temperature;
+        sum += bmsParameters[index - i].temperature;
     }
     
     sum = sum/5;
@@ -113,9 +113,9 @@ calculateSMAforCR(int index)
 {
     float sum = 0;
 
-    for (int i=5; i > 0; i--)
+    for (int i=4; i >= 0; i--)
     {
-        sum += bmsParameters[index - 5].chargeRate;
+        sum += bmsParameters[index - i].chargeRate;
     }
     
     sum = sum/5;
