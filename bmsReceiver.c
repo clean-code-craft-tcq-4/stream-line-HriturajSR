@@ -9,7 +9,7 @@ ReadParameters(void)
 {
     struct BMSParameters p1;
     
-        scanf("%f,%f\n", &p1.temperature, &p1.chargeRate]);
+        scanf("%f,%f\n", &p1.temperature, &p1.chargeRate);
 
         return p1;
 }
