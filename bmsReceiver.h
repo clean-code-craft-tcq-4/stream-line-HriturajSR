@@ -11,9 +11,12 @@ struct BMSProcessedParameters{
     float smaTemp[45];
 };
 struct BMSParameters{
-    float temperature[50];
-    float chargeRate[50];
+    float temperature;
+    float chargeRate;
 };
+
+void
+calculateMaxandMin(int index);
 
 float
 calculateMaxValue(float currentValue, float maxValue);
@@ -22,4 +25,19 @@ float
 calculateMinValue(float currentValue, float minValue);
 
 float
-calculateSMA(float *currentValue);
+calculateSMA(int index);
+
+float
+calculateSMAforTemp(int index);
+
+float
+calculateSMAforCR(int index);
+
+void
+initializeProcessedParameters(void);
+
+struct BMSParameters
+ReadParameters(void);
+
+void
+processSensorInputs(void);
