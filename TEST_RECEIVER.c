@@ -11,12 +11,12 @@ TEST_MAX_AND_MIN_FUNC (void)
 {
     if (index == 0)
     {
-        initializeProcessedParameters(&bmsParameters);
+        initializeProcessedParameters(bmsParameters);
     }
 
-    calculateMaxandMin(&bmsParameters, 9);
+    calculateMaxandMin(bmsParameters, 9);
 
-    calculateSMA(&bmsParameters, 9);
+    calculateSMA(bmsParameters, 9);
 
     assert (processedParameters.maxChargeRate == 79);
     assert (processedParameters.minChargeRate == 39);

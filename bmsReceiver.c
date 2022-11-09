@@ -23,17 +23,17 @@ processSensorInputs(void)
 
         if (index == 0)
         {
-            initializeProcessedParameters(&bmsParameters);
+            initializeProcessedParameters(bmsParameters);
         }
 
-        calculateMaxandMin(&bmsParameters, index);
+        calculateMaxandMin(bmsParameters, index);
 
-        calculateSMA(&bmsParameters, index);   
+        calculateSMA(bmsParameters, index);   
     }
 }
 
 void
-calculateSMA(struct BMSParameters *bmsParameters, int index)
+calculateSMA(struct BMSParameters bmsParameters[], int index)
 {
     if (index >= (SMA_CONSTANT - 1))
     {
@@ -45,7 +45,7 @@ calculateSMA(struct BMSParameters *bmsParameters, int index)
 }
 
 void
-initializeProcessedParameters(struct BMSParameters *bmsParameters)
+initializeProcessedParameters(struct BMSParameters bmsParameters[])
 {
     processedParameters.maxTemp = bmsParameters[0].temperature;
     processedParameters.minTemp = bmsParameters[0].temperature;
@@ -55,7 +55,7 @@ initializeProcessedParameters(struct BMSParameters *bmsParameters)
 }
 
 void
-calculateMaxandMin(struct BMSParameters *bmsParameters, int index)
+calculateMaxandMin(struct BMSParameters bmsParameters[], int index)
 {
         processedParameters.maxTemp = calculateMaxValue (bmsParameters[index].temperature, processedParameters.maxTemp);
         processedParameters.minTemp = calculateMinValue (bmsParameters[index].temperature, processedParameters.minTemp);

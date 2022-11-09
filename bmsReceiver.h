@@ -16,7 +16,7 @@ struct BMSParameters{
 };
 
 void
-calculateMaxandMin(struct BMSParameters *bmsParameters, int index);
+calculateMaxandMin(struct BMSParameters bmsParameters[], int index);
 
 float
 calculateMaxValue(float currentValue, float maxValue);
@@ -25,7 +25,7 @@ float
 calculateMinValue(float currentValue, float minValue);
 
 void
-calculateSMA(struct BMSParameters *bmsParameters, int index);
+calculateSMA(struct BMSParameters bmsParameters[], int index);
 
 float
 calculateSMAforTemp(int index);
@@ -34,7 +34,7 @@ float
 calculateSMAforCR(int index);
 
 void
-initializeProcessedParameters(struct BMSParameters *bmsParameters);
+initializeProcessedParameters(struct BMSParameters bmsParameters[]);
 
 struct BMSParameters
 ReadParameters(void);
