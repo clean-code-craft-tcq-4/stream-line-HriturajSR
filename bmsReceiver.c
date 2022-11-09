@@ -23,29 +23,29 @@ processSensorInputs(void)
 
         if (index == 0)
         {
-            initializeProcessedParameters();
+            initializeProcessedParameters(&bmsParameters);
         }
 
-        calculateMaxandMin(index);
+        calculateMaxandMin(&bmsParameters, index);
 
-        calculateSMA(index);        
+        calculateSMA(&bmsParameters, index);   
     }
 }
 
 void
-calculateSMA(int index)
+calculateSMA(struct BMSParameters *bmsParameters, int index)
 {
     if (index >= (SMA_CONSTANT - 1))
     {
         processedParameters.smaTemp[index - (SMA_CONSTANT-1)] = calculateSMAforTemp (index);
         processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)] = calculateSMAforCR (index);
-        printf("%d SMATemp-(%f),SMACR-(%f)\n",index - (SMA_CONSTANT-1), processedParameters.smaTemp[index - (SMA_CONSTANT-1)], 
+        printf("SMATemperature= %f, SMAChargeRate= %f\n", processedParameters.smaTemp[index - (SMA_CONSTANT-1)], 
                                                 processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)]);
     }
 }
 
 void
-initializeProcessedParameters(void)
+initializeProcessedParameters(struct BMSParameters *bmsParameters)
 {
     processedParameters.maxTemp = bmsParameters[0].temperature;
     processedParameters.minTemp = bmsParameters[0].temperature;
@@ -55,7 +55,7 @@ initializeProcessedParameters(void)
 }
 
 void
-calculateMaxandMin(int index)
+calculateMaxandMin(struct BMSParameters *bmsParameters, int index)
 {
         processedParameters.maxTemp = calculateMaxValue (bmsParameters[index].temperature, processedParameters.maxTemp);
         processedParameters.minTemp = calculateMinValue (bmsParameters[index].temperature, processedParameters.minTemp);
@@ -67,18 +67,13 @@ calculateMaxandMin(int index)
 void 
 displayReadData(void)
 {
-    for (int i = 0; i< 50; i++)
-    { 
-        printf("Temp-%f,CR-%f\n", bmsParameters[i].temperature, bmsParameters[i].chargeRate);
-    }
-
-    printf ("\nMaxTemp = %f\t MinTemp= %f\t MaxCR = %f\t MinCR =%f\n\n",
+    printf ("\nMaxTemperature = %f\t MinTemperature = %f\t MaxChargeRate = %f\t MinChargeRate =%f\n\n",
         processedParameters.maxTemp, processedParameters.minTemp,
         processedParameters.maxChargeRate, processedParameters.minChargeRate);
 
-    for (int j = 0; j <= 45; j++)
-    {
-        printf("SMATemp-%f,SMACR-%f\n", processedParameters.smaTemp[j], processedParameters.smaChargeRate[j]);
+    for (int i = 0; i< 50; i++)
+    { 
+        printf("Temperature = %f,Charge Rate = %f\n", bmsParameters[i].temperature, bmsParameters[i].chargeRate);
     }
 }
 
