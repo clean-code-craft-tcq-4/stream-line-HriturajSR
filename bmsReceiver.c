@@ -37,8 +37,8 @@ calculateSMA(struct BMSParameters bmsParameters[], int index)
 {
     if (index >= (SMA_CONSTANT - 1))
     {
-        processedParameters.smaTemp[index - (SMA_CONSTANT-1)] = calculateSMAforTemp (index);
-        processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)] = calculateSMAforCR (index);
+        processedParameters.smaTemp[index - (SMA_CONSTANT-1)] = calculateSMAforTemp (bmsParameters, index);
+        processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)] = calculateSMAforCR (bmsParameters, index);
         printf("SMATemperature= %f, SMAChargeRate= %f\n", processedParameters.smaTemp[index - (SMA_CONSTANT-1)], 
                                                 processedParameters.smaChargeRate[index - (SMA_CONSTANT-1)]);
     }
@@ -89,7 +89,7 @@ calculateMaxValue(float currentValue, float maxValue)
 }
 
 float
-calculateSMAforTemp(int index)
+calculateSMAforTemp(struct BMSParameters bmsParameters[], int index)
 {
     float sum = 0;
 
@@ -104,7 +104,7 @@ calculateSMAforTemp(int index)
 }
 
 float
-calculateSMAforCR(int index)
+calculateSMAforCR(struct BMSParameters bmsParameters[], int index)
 {
     float sum = 0;
 

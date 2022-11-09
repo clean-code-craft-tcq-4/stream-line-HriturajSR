@@ -28,10 +28,10 @@ void
 calculateSMA(struct BMSParameters bmsParameters[], int index);
 
 float
-calculateSMAforTemp(int index);
+calculateSMAforTemp(struct BMSParameters bmsParameters[], int index);
 
 float
-calculateSMAforCR(int index);
+calculateSMAforCR(struct BMSParameters bmsParameters[], int index);
 
 void
 initializeProcessedParameters(struct BMSParameters bmsParameters[]);
