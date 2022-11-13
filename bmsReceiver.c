@@ -11,8 +11,8 @@ ReadParameters(void)
         return p1;
 }
 
-struct BMSProcessedParameters *processedParameters
-processSensorInputs(void)
+struct BMSProcessedParameters
+*processSensorInputs(void)
 {
     struct BMSParameters bmsParameters[TOTAL_READINGS];
     struct BMSProcessedParameters processedParameters;
@@ -64,11 +64,11 @@ initializeProcessedParameters(struct BMSParameters bmsParameters[], struct BMSPr
 void
 calculateMaxandMin(struct BMSParameters bmsParameters[], struct BMSProcessedParameters *processedParameters, int index)
 {
-        processedParameters->maxTemp = calculateMaxValue (bmsParameters[index].temperature, processedParameters.maxTemp);
-        processedParameters->minTemp = calculateMinValue (bmsParameters[index].temperature, processedParameters.minTemp);
-        
-        processedParameters->maxChargeRate = calculateMaxValue (bmsParameters[index].chargeRate, processedParameters.maxChargeRate);
-        processedParameters->minChargeRate = calculateMinValue (bmsParameters[index].chargeRate, processedParameters.minChargeRate);
+    processedParameters->maxTemp = calculateMaxValue (bmsParameters[index].temperature, processedParameters->maxTemp);
+    processedParameters->minTemp = calculateMinValue (bmsParameters[index].temperature, processedParameters->minTemp);
+    
+    processedParameters->maxChargeRate = calculateMaxValue (bmsParameters[index].chargeRate, processedParameters->maxChargeRate);
+    processedParameters->minChargeRate = calculateMinValue (bmsParameters[index].chargeRate, processedParameters->minChargeRate);
 }
 
 void 

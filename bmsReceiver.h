@@ -36,8 +36,8 @@ initializeProcessedParameters(struct BMSParameters bmsParameters[], struct BMSPr
 struct BMSParameters
 ReadParameters(void);
 
-struct BMSProcessedParameters *processedParameters
-processSensorInputs(void);
+struct BMSProcessedParameters
+*processSensorInputs(void);
 
 void
 calculateSMA(struct BMSParameters bmsParameters[], struct BMSProcessedParameters *processedParameters, int index);
