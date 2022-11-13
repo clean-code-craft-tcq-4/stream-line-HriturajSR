@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <math.h>
 
 #include "bmsReceiver.h"
 
@@ -41,19 +42,19 @@ TEST_SMA(void)
     for (int i = 0; i <=5 ; i++)
         printf("TEST: %f - %f abs %f - %f\n",testprocessedParameters.smaChargeRate[i],testprocessedParameters.smaTemp[i],
                         abs(testprocessedParameters.smaChargeRate[i]),abs(testprocessedParameters.smaTemp[i]));
-    /*assert (abs(testprocessedParameters.smaChargeRate[0]) == abs(67.8));
-    assert (abs(testprocessedParameters.smaChargeRate[1]) == abs(66.4));
-    assert (abs(testprocessedParameters.smaChargeRate[2]) == abs(59.6));
-    assert (abs(testprocessedParameters.smaChargeRate[3]) == abs(57.8));
-    assert (abs(testprocessedParameters.smaChargeRate[4]) == abs(49.8));
-    assert (abs(testprocessedParameters.smaChargeRate[5]) == abs(55.2));
+    assert (abs(testprocessedParameters.smaChargeRate[0] - 67.8) < epsilon);
+    assert (abs(testprocessedParameters.smaChargeRate[1] - 66.4) < epsilon);
+    assert (abs(testprocessedParameters.smaChargeRate[2] - 59.6) < epsilon);
+    assert (abs(testprocessedParameters.smaChargeRate[3] - 57.8) < epsilon);
+    assert (abs(testprocessedParameters.smaChargeRate[4] - 49.8) < epsilon);
+    assert (abs(testprocessedParameters.smaChargeRate[5] - 55.2) < epsilon);
 
-    assert (abs(testprocessedParameters.smaTemp[0]) == abs(18.8));
-    assert (abs(testprocessedParameters.smaTemp[1]) == abs(24.6));
-    assert (abs(testprocessedParameters.smaTemp[2]) == abs(20));
-    assert (abs(testprocessedParameters.smaTemp[3]) == abs(14.2));
-    assert (abs(testprocessedParameters.smaTemp[4]) == abs(20.8));
-    assert (abs(testprocessedParameters.smaTemp[5]) == abs(20.2));*/
+    assert (abs(testprocessedParameters.smaTemp[0] - 18.8) < epsilon);
+    assert (abs(testprocessedParameters.smaTemp[1] - 24.6) < epsilon);
+    assert (abs(testprocessedParameters.smaTemp[2] - 20) < epsilon);
+    assert (abs(testprocessedParameters.smaTemp[3] - 14.2) < epsilon);
+    assert (abs(testprocessedParameters.smaTemp[4] - 20.8) < epsilon);
+    assert (abs(testprocessedParameters.smaTemp[5] - 20.2) < epsilon);
     printf("***********SMA test passed***********\n");
 }
 
