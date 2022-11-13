@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "bmsreceiver.h"
+#include "bmsReceiver.h"
 
 struct BMSParameters bmsParameters[10]
         = [[11,74],[29,74],[29,69],[14,79],[11,43],[40,67],[6,40],[9,60],[38,39],[8,70]];
