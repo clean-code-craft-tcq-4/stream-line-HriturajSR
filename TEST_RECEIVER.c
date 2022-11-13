@@ -11,7 +11,8 @@ TEST_PROCESS_DATA (void)
 {
     for (int i = 0; i< 10; i++)
     {
-        initializeProcessedParameters(testbmsParameters, &testprocessedParameters);
+        if (i == 0)
+            initializeProcessedParameters(testbmsParameters, &testprocessedParameters);
 
         calculateMaxandMin(testbmsParameters, &testprocessedParameters, i);
 
