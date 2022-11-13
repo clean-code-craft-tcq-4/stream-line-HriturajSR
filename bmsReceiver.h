@@ -31,7 +31,7 @@ float
 calculateSMAforCR(struct BMSParameters bmsParameters[], int index);
 
 void
-initializeProcessedParameters(struct BMSParameters bmsParameters[], struct BMSProcessedParameters *processedParameters)
+initializeProcessedParameters(struct BMSParameters bmsParameters[], struct BMSProcessedParameters *processedParameters);
 
 struct BMSParameters
 ReadParameters(void);

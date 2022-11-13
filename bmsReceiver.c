@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "bmsReceiver.h"
 
+struct BMSParameters bmsParameters[TOTAL_READINGS];
+struct BMSProcessedParameters processedParameters;
 struct BMSParameters
 ReadParameters(void)
 {
@@ -14,9 +16,6 @@ ReadParameters(void)
 struct BMSProcessedParameters
 *processSensorInputs(void)
 {
-    struct BMSParameters bmsParameters[TOTAL_READINGS];
-    struct BMSProcessedParameters processedParameters;
-
     for (int index = 0; index < TOTAL_READINGS; index++)
     {
         bmsParameters[index] = ReadParameters();
