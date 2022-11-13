@@ -4,15 +4,12 @@
 #include "bmsReceiver.h"
 
 struct BMSParameters bmsParameters[10]
-        = [[11,74],[29,74],[29,69],[14,79],[11,43],[40,67],[6,40],[9,60],[38,39],[8,70]];
+        = {{11,74},{29,74},{29,69},{14,79},{11,43},{40,67},{6,40},{9,60},{38,39},{8,70}};
 struct BMSProcessedParameters processedParameters;
 void
 TEST_MAX_AND_MIN_FUNC (void)
 {
-    if (index == 0)
-    {
-        initializeProcessedParameters(bmsParameters);
-    }
+    initializeProcessedParameters(bmsParameters);
 
     calculateMaxandMin(bmsParameters, 9);
 
