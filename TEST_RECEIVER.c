@@ -19,7 +19,11 @@ TEST_MAX_AND_MIN_FUNC (void)
     assert (testprocessedParameters.minChargeRate == 39);
     assert (testprocessedParameters.maxTemp == 40);
     assert (testprocessedParameters.minTemp == 6);*/
-    printf("TEST: %f - %f - %f - %f",testprocessedParameters.maxChargeRate,testprocessedParameters.minChargeRate,
+    for (int i = 0; i< 10; i++)
+    { 
+        printf("Temperature = %f,Charge Rate = %f\n", testbmsParameters[i].temperature, testbmsParameters[i].chargeRate);
+    }
+    printf("\nTEST: %f - %f - %f - %f\n",testprocessedParameters.maxChargeRate,testprocessedParameters.minChargeRate,
                             testprocessedParameters.maxTemp,testprocessedParameters.minTemp);
 
 }

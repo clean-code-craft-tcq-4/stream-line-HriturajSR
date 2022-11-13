@@ -132,9 +132,9 @@ calculateMinValue(float currentValue, float minValue)
 
 int main()
 {
-    struct BMSProcessedParameters *processedResults;
-    processedResults = processSensorInputs();
-    displayReadData(processedResults);
+    //struct BMSProcessedParameters *processedResults;
+    //processedResults = processSensorInputs();
+    //displayReadData(processedResults);
     TEST_RUN ();
 
     return 0;
