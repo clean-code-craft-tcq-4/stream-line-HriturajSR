@@ -46,7 +46,7 @@ TEST_SMA(void)
     assert (testprocessedParameters.smaTemp[0] == 18.8f);
     assert (testprocessedParameters.smaTemp[1] == 24.6f);
     assert (testprocessedParameters.smaTemp[2] == 20.0f);
-    assert (testprocessedParameters.smaTemp[3] == 14.2f);
+    assert (testprocessedParameters.smaTemp[3] == 16.0f);
     assert (testprocessedParameters.smaTemp[4] == 20.8f);
     assert (testprocessedParameters.smaTemp[5] == 20.2f);
     printf("***********SMA test passed***********\n");
