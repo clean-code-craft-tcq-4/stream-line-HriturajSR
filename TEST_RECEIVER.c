@@ -26,10 +26,10 @@ TEST_PROCESS_DATA (void)
 void
 TEST_MAX_AND_MIN (void)
 {
-    assert (abs(testprocessedParameters.maxChargeRate) == 79);
-    assert (abs(testprocessedParameters.minChargeRate) == 39);
-    assert (abs(testprocessedParameters.maxTemp) == 40);
-    assert (abs(testprocessedParameters.minTemp) == 6);
+    assert (testprocessedParameters.maxChargeRate == 79.0f);
+    assert (testprocessedParameters.minChargeRate == 39.0f);
+    assert (testprocessedParameters.maxTemp == 40.0f);
+    assert (testprocessedParameters.minTemp == 6.0f);
     printf("***********Max n min test passed***********\n");
 }
 
@@ -45,7 +45,7 @@ TEST_SMA(void)
 
     assert (testprocessedParameters.smaTemp[0] == 18.8f);
     assert (testprocessedParameters.smaTemp[1] == 24.6f);
-    assert (testprocessedParameters.smaTemp[2] == 20f);
+    assert (testprocessedParameters.smaTemp[2] == 20.0f);
     assert (testprocessedParameters.smaTemp[3] == 14.2f);
     assert (testprocessedParameters.smaTemp[4] == 20.8f);
     assert (testprocessedParameters.smaTemp[5] == 20.2f);
