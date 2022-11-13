@@ -8,6 +8,10 @@ struct BMSParameters testbmsParameters[10]
         = {{11,74},{29,74},{29,69},{14,79},{11,43},{40,67},{6,40},{9,60},{38,39},{8,70}};
 struct BMSProcessedParameters testprocessedParameters;
 
+/**
+ * @brief process constant data for verification
+ * 
+ */
 void
 TEST_PROCESS_DATA (void)
 {
@@ -22,7 +26,10 @@ TEST_PROCESS_DATA (void)
 
     }
 }
-
+/**
+ * @brief test maximum and minimum of temp and cr for constant inputs
+ * 
+ */
 void
 TEST_MAX_AND_MIN (void)
 {
@@ -33,6 +40,10 @@ TEST_MAX_AND_MIN (void)
     printf("***********Max n min test passed***********\n");
 }
 
+/**
+ * @brief test simple moving average of temp and cr
+ * 
+ */
 void
 TEST_SMA(void)
 {
@@ -52,6 +63,10 @@ TEST_SMA(void)
     printf("***********SMA test passed***********\n");
 }
 
+/**
+ * @brief run test cases
+ * 
+ */
 void
 TEST_RUN (void)
 {
