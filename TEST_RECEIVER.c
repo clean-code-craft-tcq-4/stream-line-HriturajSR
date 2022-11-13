@@ -3,22 +3,22 @@
 
 #include "bmsReceiver.h"
 
-struct BMSParameters bmsParameters[10]
+struct BMSParameters testbmsParameters[10]
         = {{11,74},{29,74},{29,69},{14,79},{11,43},{40,67},{6,40},{9,60},{38,39},{8,70}};
-struct BMSProcessedParameters processedParameters;
+struct BMSProcessedParameters testprocessedParameters;
 void
 TEST_MAX_AND_MIN_FUNC (void)
 {
-    initializeProcessedParameters(bmsParameters);
+    initializeProcessedParameters(testbmsParameters, &testprocessedParameters);
 
-    calculateMaxandMin(bmsParameters, 9);
+    calculateMaxandMin(testbmsParameters, &testprocessedParameters, 9);
 
-    calculateSMA(bmsParameters, 9);
+    calculateSMA(testbmsParameters, &testprocessedParameters, 9);
 
-    assert (processedParameters.maxChargeRate == 79);
-    assert (processedParameters.minChargeRate == 39);
-    assert (processedParameters.maxTemp == 40);
-    assert (processedParameters.minTemp == 6);
+    assert (testprocessedParameters.maxChargeRate == 79);
+    assert (testprocessedParameters.minChargeRate == 39);
+    assert (testprocessedParameters.maxTemp == 40);
+    assert (testprocessedParameters.minTemp == 6);
 
 }
 
@@ -27,19 +27,26 @@ TEST_SMA(void)
 {
     for (int i = 0; i <=5;i++)
     {
-        printf("TEST: %f - %f",processedParameters.smaChargeRate[i],processedParameters.smaTemp[i]);
+        printf("TEST: %f - %f",testprocessedParameters.smaChargeRate[i],testprocessedParameters.smaTemp[i]);
     }
-    assert (processedParameters.smaChargeRate[0] == 67.8);
-    assert (processedParameters.smaChargeRate[1] == 66.4);
-    assert (processedParameters.smaChargeRate[2] == 59.6);
-    assert (processedParameters.smaChargeRate[3] == 57.8);
-    assert (processedParameters.smaChargeRate[4] == 49.8);
-    assert (processedParameters.smaChargeRate[5] == 55.2);
+    assert (testprocessedParameters.smaChargeRate[0] == 67.8);
+    assert (testprocessedParameters.smaChargeRate[1] == 66.4);
+    assert (testprocessedParameters.smaChargeRate[2] == 59.6);
+    assert (testprocessedParameters.smaChargeRate[3] == 57.8);
+    assert (testprocessedParameters.smaChargeRate[4] == 49.8);
+    assert (testprocessedParameters.smaChargeRate[5] == 55.2);
 
-    assert (processedParameters.smaTemp[0] == 18.8);
-    assert (processedParameters.smaTemp[1] == 24.6);
-    assert (processedParameters.smaTemp[2] == 20);
-    assert (processedParameters.smaTemp[3] == 14.2);
-    assert (processedParameters.smaTemp[4] == 20.8);
-    assert (processedParameters.smaTemp[5] == 20.2);
+    assert (testprocessedParameters.smaTemp[0] == 18.8);
+    assert (testprocessedParameters.smaTemp[1] == 24.6);
+    assert (testprocessedParameters.smaTemp[2] == 20);
+    assert (testprocessedParameters.smaTemp[3] == 14.2);
+    assert (testprocessedParameters.smaTemp[4] == 20.8);
+    assert (testprocessedParameters.smaTemp[5] == 20.2);
+}
+
+void
+TEST_RUN (void)
+{
+    TEST_MAX_AND_MIN_FUNC();
+    TEST_SMA();
 }

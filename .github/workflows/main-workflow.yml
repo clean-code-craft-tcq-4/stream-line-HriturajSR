@@ -18,7 +18,7 @@ jobs:
       run:  g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testSender Test_Sender.cpp CHARGE.cpp TEMPERATURE.cpp SendSensorData.cpp
 
     - name: build receiver 
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testReceiver bmsReceiver.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testReceiver bmsReceiver.c TEST_RECEIVER.c
 
     - name: Pipeline sender/receiver
       run: ./testSender | ./testReceiver

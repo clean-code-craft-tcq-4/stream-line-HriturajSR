@@ -44,3 +44,6 @@ calculateSMA(struct BMSParameters bmsParameters[], struct BMSProcessedParameters
 
 void 
 displayReadData(struct BMSProcessedParameters *processedParameters);
+
+void
+TEST_RUN (void);
